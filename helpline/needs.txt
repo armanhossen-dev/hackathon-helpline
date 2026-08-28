@@ -1,0 +1,85 @@
+1. The "Golden" Auth + Database Template (Crucial)
+2. The UI Component Library (Pre-Installed)
+3. The "Data Fetching" Scaffold
+4. The Layout Skeleton
+
+Here is your exact pre-build checklist. Clone these repos or have these folders saved locally RIGHT NOW.
+
+1. The "Golden" Auth + Database Template (Crucial)
+90% of hackathon problems need login, profiles, and storing data. Do not build this from scratch.
+
+Pre-build: A full-stack app with Next.js 14 (App Router) + NextAuth.js (or Clerk) + Prisma + PostgreSQL (via Supabase or local Docker).
+
+Pre-configure: Have a User table already built with id, email, name, and profileImage. Have the login (Google/GitHub) working 100% locally.
+
+Why: When the hack starts, you copy this folder, delete the .git, and instantly have a user system. That saves you 1.5 hours.
+
+2. The UI Component Library (Pre-Installed)
+Do not write CSS from scratch. Do not write raw Tailwind classes for complex components.
+
+Pre-build: A fresh folder with Next.js + Tailwind + Shadcn/ui already installed and configured.
+
+Pre-configure: Go into the components/ui folder and make sure you have these pre-built and styled: Button, Card, Input, Dialog, DropdownMenu, and Toast/Notification.
+
+Why: When you need a modal, you just type <Dialog> and go. Do not install Shadcn during the hackathon; their install server always lags.
+
+3. The "Data Fetching" Scaffold
+Pre-build: A lib/api-client.ts file with React Query (TanStack Query) already set up with a custom hook for useFetch and useMutation.
+
+Pre-configure: Have an empty services/ folder with a userService.ts that already has getUserProfile() and updateUser() functions written out, ready to plug in your API endpoints.
+
+Why: You will be hitting APIs. If you have to write useEffect and fetch even once, you've lost.
+
+4. The Layout Skeleton
+Pre-build: A components/Layout.tsx that has a Navbar (with a login/logout button), a Sidebar (collapsible), and a Footer.
+
+Pre-configure: Make the Navbar actually read the user session from your Auth setup.
+
+Why: You can immediately start building the problem-solving page instead of worrying about where the logout button goes.
+
+
+
+The "5-Minute" On-The-Day Setup Ritual
+When they say "Go!", you and your friend do THIS EXACT SPLIT:
+
+You (Dev 1): Open the Auth Template. Change the .env variables to your hackathon database. Run npm i and npx prisma migrate dev. Get the site running on localhost:3000 with login working. (This is your only job for the first 20 mins).
+
+Friend (Dev 2): Open the UI Component Template. Start building the Frontend Mockup based on the problem statement. Use placeholder data (hardcoded JSON) to build the main dashboard/interface. Do not wait for the backend.
+
+Pre-build "Cheat Codes" for the Mac Mini
+Since you are on a Mac Mini, do these TONIGHT:
+
+Install httpie or Insomnia – So you can test APIs instantly without opening Postman (which takes 2 mins to boot).
+
+Pre-download a Docker Image – If you are using Postgres locally, run docker pull postgres:16 today so it doesn't download during the hackathon (WiFi always crashes at hackathons).
+
+Create an Aliases file – In your .zshrc, add:
+
+alias ni="npm install"
+
+alias ns="npm run dev"
+
+alias pg-start="docker start postgres"
+(This saves precious seconds typing)
+
+The Ultimate "Demo Day" Trap to Pre-build
+The judges don't care about your code. They care about the user flow.
+
+Pre-build a components/DemoBanner.tsx – A small colored bar at the top of your app that says "⚠️ Demo Mode".
+
+Pre-build a utils/mockData.ts – Have 10 fake users and 20 fake posts/transactions ready as JSON objects.
+
+Why? If your backend crashes 10 minutes before presenting (and it will), you toggle const IS_DEMO = true, and your app instantly uses the mock data. You present smoothly while other teams panic.
+
+The Final 4-Hour Gameplan
+Hour 1: Auth is working. Friend has the UI built with mock data.
+
+Hour 2: Connect the UI to the real database. Friend writes the API routes, you handle the state management.
+
+Hour 3: Polish the UI (add Shadcn animations), write the README.md (do this NOW, not at the end).
+
+Hour 4: Record a 2-minute Loom video of the app working perfectly. Rehearse your 60-second pitch. Push to GitHub. Go grab free Red Bull.
+
+Pro Move: Before you start, create a blank GitHub repo. When you copy your template, git init and push immediately. This gives you a "save point" if you break everything.
+
+Now go smash it. DM me the link when you win. 🚀
