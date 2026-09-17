@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #06080d;
+    --bg-secondary: #0b0f17;
+    --bg-card: #101622;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --accent-green: #00ff66;
+    --accent-cyan: #00e5ff;
+  }
+
+  .light {
+    --bg-primary: #f8fafc;
+    --bg-secondary: #f1f5f9;
+    --bg-card: #ffffff;
+    --border-color: rgba(0, 0, 0, 0.09);
+    --accent-green: #059669;
+    --accent-cyan: #0284c7;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: #e2e8f0;
+    overflow-x: hidden;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .light body {
+    color: #0f172a;
+    background-color: #f8fafc;
+  }
+}
+
+/* Developer Hacker Grid Background */
+.bg-grid-cyber {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.light .bg-grid-cyber {
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+}
+
+/* Scanline effect */
+.scanline {
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(0, 255, 102, 0.015) 51%,
+    transparent 52%
+  );
+  background-size: 100% 4px;
+}
+
+/* Terminal text glow */
+.text-glow-green {
+  text-shadow: 0 0 10px rgba(0, 255, 102, 0.45);
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.45);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #06080d;
+}
+
+.light ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 102, 0.4);
+}
+
+/* Monospace font utility */
+.font-terminal {
+  font-family: 'JetBrains Mono', monospace;
+}
